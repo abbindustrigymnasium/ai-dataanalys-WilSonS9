@@ -84,7 +84,7 @@ def ucs(start, goal):
 def greedyBestFirst(start, goal):
     localRoot = dfs(root, [], start)
     stack = LifoQueue()
-    bestCost = 1000000
+    bestCost = inf
     bestPath = []
     visited = []
     stack.put((localRoot, [], 0))
@@ -114,7 +114,7 @@ def greedyBestFirst(start, goal):
 def aStarSearch(start, goal):
     localRoot = dfs(root, [], start)
     stack = LifoQueue()
-    bestCost = 1000000
+    bestCost = inf
     bestPath = []
     paths = []
     stack.put((localRoot, [], 0))
