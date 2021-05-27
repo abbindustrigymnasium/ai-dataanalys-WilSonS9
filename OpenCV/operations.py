@@ -1,20 +1,31 @@
 import numpy as np
-import cv2
+import cv2 as cv
 
-img = cv2.imread('images/rubberwhale1.png', -1)
-img2 = cv2.imread('images/starry_star.png', -1)
+def nothing(x):
+    print(x)
 
-print(img.shape)
-print(img.size)
-print(img.dtype)
-b,g,r = cv2.split(img)
-img = cv2.merge((b,g,r))
+cv.namedWindow('image')
 
-img = cv2.resize(img, (512, 512))
-img2 = cv2.resize(img, (512, 512))
+cv.createTrackbar('CP', 'image', 10, 400, nothing)
 
-img3 = cv2.addWeighted(img, .2, img2, .8, 1)
+switch = 'color/gray'
+cv.createTrackbar(switch, 'image', 0, 1, nothing)
 
-cv2.imshow('image', img3)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+while True:
+    img = cv.imread('./images/lena.jpg')
+    k = cv.waitKey(1) & 0xFF
+    if k == 27:
+        break
+
+    pos = cv.getTrackbarPos('CP', 'image')
+    s = cv.getTrackbarPos(switch, 'image')
+    font = cv.FONT_HERSHEY_COMPLEX
+    cv.putText(img, str(pos), (50, 150), font, 4, (0, 0, 255))
+
+    if s==0:
+        pass
+    else:
+        img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+    cv.imshow('image', img)
+
+cv.destroyAllWindows()
