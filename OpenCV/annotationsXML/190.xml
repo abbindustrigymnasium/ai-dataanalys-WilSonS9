@@ -1,0 +1,1 @@
+<annotations><filename>190.JPEG</filename><folder>images</folder><size><width>512</width><height>512</height><depth>3</depth></size><object><name>minifig</name><pose>Unspecified</pose><truncated>0</truncated><difficult>0</difficult><bndbox><xmin>172.0</xmin><ymin>80.0</ymin><xmax>357.0</xmax><ymax>408.0</ymax></bndbox></object></annotations>

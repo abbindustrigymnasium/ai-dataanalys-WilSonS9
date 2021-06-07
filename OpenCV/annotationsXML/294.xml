@@ -1,0 +1,1 @@
+<annotations><filename>294.JPEG</filename><folder>images</folder><size><width>512</width><height>512</height><depth>3</depth></size><object><name>minifig</name><pose>Unspecified</pose><truncated>0</truncated><difficult>0</difficult><bndbox><xmin>171.0</xmin><ymin>121.0</ymin><xmax>344.0</xmax><ymax>392.0</ymax></bndbox></object></annotations>
